@@ -14,15 +14,22 @@
 <body>
     <div class="admin-main">
         <blockquote class="layui-elem-quote">
-            <a href='javascript:void(0);' onclick='CreateRemote()' class="layui-btn layui-btn-small">
-                <i class="layui-icon"></i> 新建主机
-            </a>
-            <a id = 'RemoteShellA' href='javascript:void(0);' onclick='RemoteShell()' style="display: none" class="layui-btn layui-btn-small">
-                <i class="layui-icon"></i> 批量执行
-            </a>
-            <a id = 'DeleteRRemote' href='javascript:void(0);' onclick='DeleteR()' style="display: none" class="layui-btn layui-btn-small">
-                <i class="layui-icon"></i> 批量删除
-            </a>
+	            <a href='javascript:void(0);' onclick='CreateRemote()' class="layui-btn layui-btn-small">
+	                <i class="layui-icon"></i> 新建主机
+	            </a>
+	            <a id = 'RemoteShellA' href='javascript:void(0);' onclick='RemoteShell()' style="display: none" class="layui-btn layui-btn-small">
+	                <i class="layui-icon"></i> 批量执行
+	            </a>
+	            <a id = 'DeleteRRemote' href='javascript:void(0);' onclick='DeleteR()' style="display: none" class="layui-btn layui-btn-small">
+	                <i class="layui-icon"></i> 批量删除
+	            </a>
+	        <ul>
+				<li>1.可以改变shell执行的目录</li>
+				<li> 2.多条shell命令使用英文分号;来分割</li>
+				<li> 3.若使用root身份执行shell,请在shell最后追加#root</li>
+				<li>如:cd /home;pwd>/home/pwd.txt #root</li>
+			</ul>	
+
         </blockquote>
         <fieldset class="layui-elem-field">
             <legend>选择主机后进行操作</legend>
@@ -262,20 +269,6 @@ var strVar = "";
                         layer.close(inputprompt);
                     }
                 );
-                clickalert = layer.alert('帮助', {
-                    title:'使用说明'
-                    ,
-                    skin: 'layui-layer-molv' //样式类名  自定义样式
-                    ,
-                    closeBtn: 1 // 是否显示关闭按钮
-                    ,
-                    anim: 0 //动画类型
-                    ,
-                    btn: ['关闭'] //按钮
-                    ,
-                    content:'1.多条shell命令使用英文分号;来分割.<br>2.若使用root身份执行shell,请在shell最后追加#root<br>如:<br>  pwd>/home/pwd.txt #root'
-                    ,
-                });
             };
             DeleteR = function () {
                 clickalert = layer.alert('真的要删除吗', {
