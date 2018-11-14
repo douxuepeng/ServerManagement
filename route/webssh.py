@@ -88,7 +88,6 @@ def GetSsh():
 def BatchExec():
     if request.method == 'GET':
         return render_template('batchExec.html')
-#批量远程主机执行shell
 #添加主机
 @app.route('/CreateBatchExec',methods=['POST'])
 @cklogin()
